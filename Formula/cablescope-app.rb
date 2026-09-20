@@ -17,13 +17,15 @@
 class CablescopeApp < Formula
   desc "Inspect USB-C / Thunderbolt cables from the menu bar"
   homepage "https://github.com/tzzs/cablescope"
-  url "https://github.com/tzzs/cablescope/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "9ff3521886e30acfe1298dd16bae93e443062d139a830737f04ad0b3c579c6c6"
+  url "https://github.com/tzzs/cablescope/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "904c73770d7d0abe70b39dc9506a88ce765881afc367eb3f68abf15e041f1742"
   license "MIT"
 
   depends_on xcode: ["15.0", :build]
-  # 与 Package.swift 的 platforms: [.macOS(.v14)] 保持一致（Sonoma = macOS 14）
-  depends_on macos: ">= :sonoma"
+  # 与 Package.swift 的 platforms: [.macOS(.v14)] 保持一致（Sonoma = macOS 14）。
+  # 注意：formula 里要写符号 :sonoma；">= :sonoma" 是 cask 专用语法，放这里会让 brew 报
+  # "unknown or unsupported macOS version"。
+  depends_on macos: :sonoma
 
   def install
     # bundle_app.sh 负责组装 .app（Info.plist、资源、图标、Widget 嵌入、ad-hoc 签名）。
