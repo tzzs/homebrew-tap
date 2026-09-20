@@ -17,8 +17,8 @@
 class CablescopeApp < Formula
   desc "Inspect USB-C / Thunderbolt cables from the menu bar"
   homepage "https://github.com/tzzs/cablescope"
-  url "https://github.com/tzzs/cablescope/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "8a87052e37ecc17130ac7db7ba362dc7d04cabead15e260d668f591ebe8a6135"
+  url "https://github.com/tzzs/cablescope/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "9ff3521886e30acfe1298dd16bae93e443062d139a830737f04ad0b3c579c6c6"
   license "MIT"
 
   depends_on xcode: ["15.0", :build]
